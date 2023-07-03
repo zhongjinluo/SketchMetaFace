@@ -74,6 +74,8 @@ This system has been tested with Python 3.8, PyTorch 1.7.1, CUDA 10.2 on Ubuntu 
   cd App/ && bash run.sh
   ```
 
+  - stage 2 hot key: Y - symmetrize stroke, ↥ - zoom in stroke, ↧ - zoom out stroke, P - predict,
+
 - If you want to run the backend algorithms on a remote server, you may have to modify  `App/config.ini`. 
 
 - This repo represents the prototype implementation of our paper. Please use this for research and educational purposes only. This is a research prototype system and made public for demonstration purposes. The user interface runs on Ubuntu 18.04 platforms only and may contain some bugs.
