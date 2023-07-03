@@ -18,7 +18,13 @@ We present *SketchMetaFace*, a novel sketching system designed for amateur users
 
 ## Demo
 
+https://github.com/zhongjinluo/SketchMetaFace/assets/22856460/4e88aa8e-18e4-4f07-89aa-aee4642c9e09
 
+https://github.com/zhongjinluo/SketchMetaFace/assets/22856460/64600b36-6283-40fc-9a60-78c9f50d5340
+
+https://github.com/zhongjinluo/SketchMetaFace/assets/22856460/a2f53a72-daa1-44e6-ba64-14fcc9edd85e
+
+https://github.com/zhongjinluo/SketchMetaFace/assets/22856460/d2d34e2a-167f-4c2b-9de0-c8bcfee3b0e3
 
 ## Usage
 
