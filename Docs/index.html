@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB3PR2Y1TQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XB3PR2Y1TQ');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SketchMetaFace: A Learning-based Sketching Interface for High-fidelity 3D Character Face Modeling</title>
+    <!-- <link rel="stylesheet" href="/assets/css/w3.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <link rel="icon" type="image/png" href="./favicon.png"/>
+    <link rel="manifest" href="./site.webmanifest">
+
+    <script src="./assets/js/video_comparison.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <div class="highlight-clean" style="padding-bottom: 0px;padding-top: 16px;">
+        <div class="container" style="max-width: 900px; padding-bottom: 3px;">
+            <h1 class="text-center"><i><b>SketchMetaFace</b>:</i> A Learning-based Sketching Interface for High-fidelity 3D Character Face Modeling</h1>
+        </div>
+        <div class="container" style="max-width: 820px;">
+            <p align="center" class="center_text">
+                <a target="_blank" href="https://zhongjinluo.github.io/">Zhongjin Luo</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="https://dongdu3.github.io/">Dong Du</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="https://scholar.google.com/citations?user=u5KCnv0AAAAJ&hl=en">Heming Zhu</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="https://i.cs.hku.hk/~yzyu/">Yizhou Yu</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="http://sweb.cityu.edu.hk/hongbofu/">Hongbo Fu</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="https://gaplab.cuhk.edu.cn/">Xiaoguang Han</a><sup>#</sup>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
+            <p class="center_text" align="center">
+                <sup>#</sup>Corresponding email: hanxiaoguang@cuhk.edu.cn
+            </p>
+        </div>
+        <!-- <div class="container" style="max-width: 820px;margin-bottom: 10px;">
+            <img src='./assets/images/smf_teaser.png' width="100%"/>
+        </div> -->
+
+        <div class="buttons" style="margin-bottom: 8px;">
+            <a class="btn btn-light" target="_blank" role="button" href="https://arxiv.org/abs/2303.12564">
+                <svg t="1675591862100" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13415" width="24" height="24">
+                    <path d="M810.666667 0H213.333333C142.613333 0 85.333333 57.28 85.333333 128v820c0 70.72 57.28 128 128 128h597.333334c70.72 0 128-57.28 128-128V128c0-70.72-57.28-128-128-128z m42.666666 896c0 23.573333-19.093333 42.666667-42.666666 42.666667H213.333333c-23.573333 0-42.666667-19.093333-42.666666-42.666667V128c0-23.573333 19.093333-42.666667 42.666666-42.666667h597.333334c23.573333 0 42.666667 19.093333 42.666666 42.666667v820zM682.666667 725.333333H341.333333a42.666667 42.666667 0 0 0 0 85.333334h341.333334a42.666667 42.666667 0 0 0 0-85.333334z m0-170.666666H341.333333a42.666667 42.666667 0 0 0 0 85.333333h341.333334a42.666667 42.666667 0 0 0 0-85.333333z m0-170.666667H341.333333a42.666667 42.666667 0 0 0 0 85.333333h341.333334a42.666667 42.666667 0 0 0 0-85.333333z m-341.333334-85.333333h170.666667a42.666667 42.666667 0 0 0 0-85.333334H341.333333a42.666667 42.666667 0 0 0 0 85.333334z" p-id="13416" fill="#515151"></path>
+                </svg>
+                Paper
+            </a>
+            <a class="btn btn-light disabled border border-dark" aria-disabled="true" role="button" href="#">
+                <svg t="1675600040319" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9338" width="24" height="24"><path d="M0 0h1024v1024H0z" fill="#515151" opacity=".01" p-id="9339"></path>
+                    <path d="M118.9888 668.672l5.4272 2.3552 392.8064 199.168 382.3616-193.8944a50.2784 50.2784 0 0 1 67.84 22.9376 51.712 51.712 0 0 1-17.4592 65.8432l-5.12 3.0208-382.4128 193.8432c-25.6 13.0048-55.296 14.336-81.8176 3.9424l-8.704-3.9424-392.704-199.168a51.6608 51.6608 0 0 1-22.6304-68.8128 50.3296 50.3296 0 0 1 62.464-25.2928z m0-204.8l5.4272 2.3552 392.8064 199.168 382.3616-193.8944a50.2784 50.2784 0 0 1 67.84 22.9376 51.712 51.712 0 0 1-17.4592 65.8432l-5.12 3.0208-382.4128 193.8432c-25.6 13.0048-55.296 14.336-81.8176 3.9424l-8.704-3.9424-392.704-199.168a51.6608 51.6608 0 0 1-22.6304-68.8128 50.3296 50.3296 0 0 1 62.464-25.2928z m416.512-407.1424l408.2176 203.5712a52.3776 52.3776 0 0 1 0 93.7984l-408.2176 203.5712a52.736 52.736 0 0 1-47.0016 0L80.2816 354.0992a52.3776 52.3776 0 0 1 0-93.7984L488.448 56.7296c14.7968-7.3728 32.256-7.3728 47.0016 0zM512 162.304L221.3376 307.2 512 452.096 802.6112 307.2 512 162.304z" fill="#515151" p-id="9340"></path>
+                </svg>
+                Project
+            </a>
+            <a class="btn btn-light" target="_blank" role="button" href="https://github.com/zhongjinluo/RaBit">
+                <svg t="1675597793702" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="25254" width="24" height="24">
+                    <path d="M85.312 164.8v604.8h853.376v-604.8H85.312zM682.688 870.4V960H341.312v-89.6H0V64h1024v806.4h-341.312zM390.08 632.128L128 503.04V422.336l262.08-128.64V390.4L230.784 462.976l159.296 72.832v96.32zM529.6 256H576l-82.048 413.184H448L529.6 256z m104.32 376.128V535.808l159.296-72.832-159.296-72.512V293.632L896 422.4v80.820L633.92 632.128z" fill="#515151" p-id="25255"></path>
+                </svg>
+                 Code   
+            </a>
+        </div>
+
+    </div>
+    <hr class="divider" style="max-width: 825px;"/>
+    <div class="container" style="max-width: 820px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2><b>Abstract</b></h2>
+                <p style="text-align: justify;">
+                    Modeling 3D avatars benefits various application scenarios such as AR/VR, gaming, and filming. Character faces contribute significant diversity and vividity as a vital component of avatars. 
+                    However, building 3D character face models usually requires a heavy workload with commercial tools, even for experienced artists. Various existing sketch-based tools fail to support amateurs in modeling diverse facial shapes and rich geometric details. 
+                    In this paper, we present <i><b>SketchMetaFace</b></i> - a sketching system targeting amateur users to model high-fidelity 3D faces in minutes. We carefully design both the user interface and the underlying algorithm. 
+                    First, curvature-aware strokes are adopted to better support the controllability of carving facial details. Second, considering the key problem of mapping a 2D sketch map to a 3D model, we develop a novel learning-based method termed ``Implicit and Depth Guided Mesh Modeling'' (IDGMM). 
+                    It fuses the advantages of mesh, implicit, and depth representations to achieve high-quality results with high efficiency. In addition, to further support usability, we present a coarse-to-fine 2D sketching interface design and a data-driven stroke suggestion tool. 
+                    User studies demonstrate the superiority of our system over existing modeling tools in terms of the ease to use and visual quality of results. Experimental analyses also show that IDGMM reaches a better trade-off between accuracy and efficiency.
+                </p>
+                <div class="row captioned_videos">
+                    <div class="container" style="max-width: 850px;margin-bottom: 0px;">
+                        <img src='./assets/images/smf_teaser.png' width="100%"/>
+                    </div>
+                    <h6 class="caption" style="text-align: justify;">Fig. 1: We present SketchMetaFace, 
+                        a novel sketching system designed for amateur users to create high-fidelity 3D character faces. 
+                        With curvature-aware strokes (valley strokes in green and ridge strokes in red), novice users can smoothly customize detailed 3D heads. 
+                        Note that our system only outputs geometry without texture and texturing is achieved using commercial modeling tools</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" style="max-width: 825px;"/>
+    <div class="container" style="max-width: 820px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2><b>Demo</b></h2>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-md-12">
+                <div class="row captioned_videos">
+                    <div class="col-md-12">
+                        <video class="video lazy" controls muted>
+                            <source data-src="./assets/videos/demo1.mp4" type="video/mp4"></source>
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row captioned_videos">
+            <div class="col-md-12">
+                <div class="row captioned_videos">
+                    <div class="col-md-12">
+                        <video class="video lazy" controls muted>
+                            <source data-src="./assets/videos/demo2.mp4" type="video/mp4"></source>
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" style="max-width: 825px;"/>
+    <div class="container" style="max-width: 820px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2><b>Usability Study</b></h2>
+                <p style="text-align: justify;">
+                    In this study, we invite 16 amateur users to freely create at least one model without restrictions on result diversity, result quality, or time duration. 
+                    Fig. 2 shows a gallery of models created by these amateur users, which reflect the expressiveness of our system. 
+                    It can be seen from this figure that our system supports amateurs in geometrical modeling to create character faces with diversified shapes and rich geometric details.
+                </p>
+                <div class="row captioned_videos">
+                    <div class="container" style="max-width: 850px;margin-bottom: 2px;">
+                        <img src='./assets/images/smf_gallery.png' width="100%"/>
+                    </div>
+                    <h6 class="caption" style="text-align: justify;">Fig. 2: The gallery of our results. 
+                        All models are created by amateur users who are trained to use our system with a tutorial. 
+                        Thanks to the easy-to-use two-stage modeling design and the stroke suggestion component, the users can complete each model design in 5-9 minutes. 
+                        The three results in the first row were created using the same coarse mesh but applying different surface details.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" style="max-width: 825px;"/>
+    <div class="container" style="max-width: 820px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2><b>Comparison Study</b></h2>
+                <p style="text-align: justify;">
+                    We also conducted a comparison study on different modeling systems to demonstrate the superiority of our system. 
+                    After thoroughly reviewing existing sketch-based character modeling systems, we chose DeepSketch2Face and SimpModeling for comparison. 
+                    16 amateur users were requested to create 3D models referring to the given image using the four compared systems (i.e., DeepSketch2Face, <i>SimpModeling</i>, <i>SketchMetaFace</i>, and ZBrush).
+                    Fig. 3 shows the reference images, the created models with the four systems, and the corresponding modeling time. 
+                    Compared to DeepSketch2Face and <i>SimpModeling</i>, our system supported users to create more appealing shapes and craft more vivid surface details. 
+                    The geometric shape and surface details created by our system are closer to the reference models. 
+                    Compared to ZBrush, our system took less time for users to create visually reasonable 3D models. 
+                </p>
+                <div class="row captioned_videos">
+                    <div class="container" style="max-width: 850px;margin-bottom: 2px;">
+                        <img src='./assets/images/smf_comparison1.png' width="100%"/>
+                    </div>
+                    <div class="container" style="max-width: 850px;margin-bottom: 2px;">
+                        <img src='./assets/images/smf_comparison2.png' width="100%"/>
+                    </div>
+                    <h6 class="caption" style="text-align: justify;">Fig. 3: Comparison between our system against the state of the arts. 
+                        The results in each row were created by the same user given a reference in (a). 
+                        For each system, we show the sketch, resulting model, drawing time, and the corresponding participant.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="divider" style="max-width: 825px;"/>
+    <!-- <div class="container" style="max-width: 820px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Citation</h2>
+                <code>
+                    @article{poole2022dreamfusion,<br>
+                    &nbsp; author = {Poole, Ben and Jain, Ajay and Barron, Jonathan T. and Mildenhall, Ben},<br>
+                    &nbsp; title  = {RaBit: Parametric Modeling of 3D Biped Cartoon Characters with a Topological-consistent Dataset},<br>
+                    &nbsp; journal = {arXiv},<br>
+                    &nbsp; year   = {2022},<br>
+                }</code>
+            </div>
+        </div>
+    </div> -->
+    
+    <p class="text-center">The website template is borrowed from <a target="_blank" href="https://dreamfusion3d.github.io/">DreamFusion</a>.</p>
+
+    <div class="modal fade" id="example" style="height:100%">
+        <div class="modal-dialog modal-dialog-centered modal-xl" style="height:60%">
+            <div class="modal-content" style="height:80%">
+                <div class="modal-header">
+                    <h5 class="modal-title">3D Viewer</h5>
+                    <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="height:100%">
+                    <iframe id="lazy_load" src="" style="width:100%;height:100%"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
+    <script src="./assets/js/yall.js"></script>
+    <script>
+        yall(
+            {
+                observeChanges: true
+            }
+        );
+    </script>
+    <!-- <script src="./assets/js/scripts.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.fd002feec.js"></script>
+    <!-- Import the component -->
+    <script>
+        $('#example').on("show.bs.modal", function () {
+            $('#lazy_load').each(function(){
+                var i = $(this);
+                i.attr('src', "./assets/3D/viewer/index.html?url=../data/example");
+            });
+        }); 
+    </script>
+</body>
+
+</html>
