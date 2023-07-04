@@ -14,7 +14,7 @@ This repository includes the prototype system of *SketchMetaFace*.
 
 We present *SketchMetaFace*, a novel sketching system designed for amateur users to create high-fidelity 3D character faces. With curvature-aware strokes (valley strokes in green and ridge strokes in red), novice users can smoothly customize detailed 3D heads. Note that our system only outputs geometry without texture and texturing is achieved using commercial modeling tools.
 
-##### | [Paper](https://zhongjinluo.github.io/SketchMetaFace/assets/paper/SketchMetaFace.pdf) | [Project](https://zhongjinluo.github.io/SketchMetaFace/) | 
+##### | [Paper](https://arxiv.org/abs/2307.00804) | [Project](https://zhongjinluo.github.io/SketchMetaFace/) | 
 
 ## Demo
 
